@@ -1,0 +1,9 @@
+{
+    "cities":[{
+        "name": "Toronto",
+        "country": "CA"
+    },{
+        "name": "Mississauga",
+        "country": "CA"
+    }]
+}
