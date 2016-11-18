@@ -207,8 +207,8 @@ class my_adminMenu {
                  <th class="row">City List</th><th class="row">Selected Cities</th>
               </tr>
               <tr valign="top">
-                 <td><?php echo $getCities->citiesOut(); ?></td>
-                 <td><div id="selectedcities"></div></td>
+                 <td><?php echo $getCities->citiesOut(); ?><div id="my_addToSelectedCities" class="button button-primary">Add to Selected Cities</div></td>
+                 <td><select id="selectedcities" name="my_selectedCities" multiple></select><div id="my_removeSelectedCities" class="button button-primary">Remove Selected</div></td>
               </tr>
            </table>
            <hr/>
@@ -250,7 +250,7 @@ class my_getCities {
         $json = file_get_contents('http://localhost:8888/wp/wp-content/plugins/wp-plugin-test/city.list.json');
         $obj = json_decode($json);
 
-        $this->cityOptions = '<select multiple>';
+        $this->cityOptions = '<select name="my_cityOptions" multiple>';
         foreach ($obj->cities as $mydata) {
             $this->cityOptions .= '<option>' . $mydata->name . '</option>';
         }
